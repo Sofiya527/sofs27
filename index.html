@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script>
+  </head>
+  
+  <body>
+    <div id="header">
+      <div class="container">
+        <nav>
+          <img src="" class="logo">
+          <ul id="sidemenu">
+            <li><a href="#header">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#Skills">Skills</a></li>
+            <li><a href="#Certifications">Certifications</a></li>
+            <li><a href="#Contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="header-text">
+          <p>Student</p>
+          <h1>Hi There!!</h1>
+          <h2>I'm <span>Sofiya</span></h2>
+        </div>
+      </div>
+    </div>
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="sof.png">
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>I'm 
+              I'm
+Sofiya Sayyed,
+this is my portfolio website where all my details had given and here 
+i declared all my true information of my knowledge My age is 20 and 
+I'm studying 3rd year BTech ECE in 'Gowthami Institute Of Technology And Management For Women', 
+with the pass percentage of 80%, Proddatur,Kadapa YSR dist. had completed my 12th standard at 'Sree Vidhya Junior College', Proddatur
+ with the pass percentage of 7.6CGPA and Schooling at 'Sharadha High School',
+ with the pass percentage of 9.0CGPA, Proddatur.
+            </p>
+            <div class="Education">
+              <h2 class="Edu">Education Pass Percentage</h2>
+              <li>
+                <h3>SSC: 90%</h3>
+                <span class="bar"><span class="SSC"></span></span>
+              </li>
+              <li>
+                <h3>Intermediate: 76%</h3>
+                <span class="bar"><span class="Intermediate"></span></span>
+              </li>
+              <li>
+                <h3>BTech: 80%</h3>
+                <span class="bar"><span class="BTech"></span></span>
+              </li>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="Skills" id="Skills">
+      <h1 class="text-center">Skills</h1>
+      <div class="myskills">
+  
+        <h2 class="Techskill">Technical Skills</h2>
+  
+        <li>
+          <h3>HTML</h3>
+          <span class="bar"><span class="HTML"></span></span>
+        </li>
+        <li>
+          <h3>CSS</h3>
+          <span class="bar"><span class="CSS"></span></span>
+        </li>
+        <li>
+          <h3>JavaScript</h3>
+          <span class="bar"><span class="JavaScript"></span></span>
+        </li>
+        <li>
+          <h3>Python</h3>
+          <span class="bar"><span class="Python"></span></span>
+        </li>
+        <li>
+          <h3>JAVA</h3>
+          <span class="bar"><span class="JAVA"></span></span>
+        </li>
+      </div>
+    </div>
+  
+    <div id="Certifications">
+      <div class="container">
+        <h1 class="sub-title1">Certifications</h1>
+        <div class="services-list">
+          <div class="nptel">
+            <img src="diploma.png" alt="diplomafile">
+            <h2>NPTEL</h2>
+            <p>Certification of Nandhi</p>
+            <a href="https://drive.google.com/file/d/17AcQ9C20ar3eRPGHOsLHmGRL3S84-l26/view?usp=drivesdk" class="btn btn-primary">Open</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div id="Contact">
+      <div class="container">
+        <div class="social">
+          <h1>Social Connection</h1>
+          <div class="social_links">
+              <a href="https://www.facebook.com/profile.php?id=100094758962733&mibextid=ZbWKwL"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://www.linkedin.com/in/sofia-syed-359616252"><i class="fa-brands fa-linkedin"></i></a>
+          </div>
+        </div>
+        <div class="contact-down">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Enter Your Name" required>
+            <input type="Email" name="email" placeholder="Enter Your email" required>
+            <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+          <span id="msg">hello</span>
+        </div>
+        
+    
+      </div>
+      </div>
+    </div>
+  
+    <script>
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbweX5WbSzI73OLJD97yRmgeDcCuow8HkKXT2TQxi2TLlfVur-WFzVUvVpo-PF-YCdAe/exec'
+      const form = document.forms['submit-to-google-sheet']
+      const msg = document.getElementById("msg")
+    
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+          .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+              msg.innerHTML = ""
+            },5000)
+            form.reset()
+          })
+          .catch(error => console.error('Error!', error.message))
+        })
+    </script>
+  
+  </body>
+</html>
